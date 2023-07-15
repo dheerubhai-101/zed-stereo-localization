@@ -3,7 +3,10 @@ project(stereo_localization)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 set(CMAKE_CXX_FLAGS "-std=c++11")
+set(CMAKE_CXX_STANDARD 14)
 
+#set(Ceres_DIR "/usr/local/stow/ceres/lib/cmake/Ceres")
+SET(Sophus_LIBRARIES libSophus.so) 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
@@ -39,6 +42,7 @@ add_definitions( ${PCL_DEFINITIONS} )
 # Sophus
 find_package( Sophus REQUIRED )
 include_directories( ${Sophus_INCLUDE_DIRS} )
+# set( Sophus_INCLUDE_DIRS "/home/bravelord/catkin_ws/src/Sophus")
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)

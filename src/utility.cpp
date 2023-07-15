@@ -122,7 +122,7 @@ void initializeGlobalParams()
 										cv::Size(WIDTH, HEIGHT), CV_32FC1, M1_l, M2_l);
 	cv::initUndistortRectifyMap(K_r, D_r, R_r, P_r.rowRange(0,3).colRange(0,3),
 										cv::Size(WIDTH, HEIGHT), CV_32FC1, M1_r, M2_r);
-	JET_COLORMAP = cv::imread("src/stereo_localization/res/colorscale_jet.jpg", CV_LOAD_IMAGE_UNCHANGED);
+	JET_COLORMAP = cv::imread("src/stereo_localization/res/colorscale_jet.jpg", cv::IMREAD_UNCHANGED);
 }
 
 void computeDepthMap(const cv::Mat& left_img, const cv::Mat& right_img)
